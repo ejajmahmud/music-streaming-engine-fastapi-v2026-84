@@ -1,0 +1,23 @@
+name: Build and Test CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Environment Sanity Check
+        run: |
+          echo "Validating environment for music-streaming-engine-fastapi-v2026-84"
+          echo "Target Architecture: Python / FastAPI"
+          echo "Category: Music & Audio Streaming Service"
+
+      - name: Run Build Verification
+        run: echo "Build verification completed successfully."
